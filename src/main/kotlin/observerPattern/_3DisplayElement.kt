@@ -1,5 +1,5 @@
 package observerPattern
 
-interface `3DisplayElement` {
+interface _3DisplayElement {
     fun display()
 }

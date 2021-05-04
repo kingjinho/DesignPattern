@@ -1,10 +1,9 @@
 package observerPattern
 
-class `5CurrentConditionsDisplay`(weatherData: `1Subject`) : `3DisplayElement`, `2Observer` {
+class _5CurrentConditionsDisplay(weatherData: _1Subject) : _3DisplayElement, _2Observer {
 
     private var temperature = 0f
     private var humidity = 0f
-    private var weatherData : `1Subject`? = weatherData
 
     init {
         weatherData.registerObserver(this)

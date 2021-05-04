@@ -2,17 +2,17 @@ package observerPattern
 
 import java.lang.IndexOutOfBoundsException
 
-class `4WeatherData` : `1Subject` {
-    private val observers by lazy { ArrayList<`2Observer`>()}
+class _4WeatherData : _1Subject {
+    private val observers by lazy { ArrayList<_2Observer>()}
     private var temperature = 0f
     private var humidity = 0f
     private var pressure = 0f
 
-    override fun registerObserver(o: `2Observer`) {
+    override fun registerObserver(o: _2Observer) {
         observers.add(o)
     }
 
-    override fun removeObserver(o: `2Observer`) {
+    override fun removeObserver(o: _2Observer) {
         if(observers.indexOf(o) < 0) {
             throw IndexOutOfBoundsException()
         }
