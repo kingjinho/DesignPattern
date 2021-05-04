@@ -7,5 +7,5 @@ interface `2Observer` {
      */
 
 
-    public fun update(temp: Float, humidity: Float, pressure: Float)
+    fun update(temp: Float, humidity: Float, pressure: Float)
 }
