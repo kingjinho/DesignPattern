@@ -11,10 +11,12 @@ class `5CurrentConditionsDisplay`(weatherData: `1Subject`) : `3DisplayElement`, 
     }
 
     override fun display() {
-        TODO("Not yet implemented")
+        println("Current Conditions: ${temperature}F degrees and ${humidity}% humidity")
     }
 
-    override fun update(temp: Float, humidity: Float, pressure: Float) {
-        TODO("Not yet implemented")
+    override fun update(temperature: Float, humidity: Float, pressure: Float) {
+        this.temperature = temperature
+        this.humidity =humidity
+        display()
     }
 }
