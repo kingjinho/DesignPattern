@@ -29,7 +29,7 @@ class _4WeatherData : _1Subject {
         }
     }
 
-    fun measurementsChanged() {
+    private fun measurementsChanged() {
         notifyObservers()
     }
 
