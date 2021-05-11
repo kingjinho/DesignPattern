@@ -15,7 +15,7 @@ class _5CurrentConditionsDisplay(weatherData: _1Subject) : _3DisplayElement, _2O
 
     override fun update(temperature: Float, humidity: Float, pressure: Float) {
         this.temperature = temperature
-        this.humidity =humidity
+        this.humidity = humidity
         display()
     }
 }
