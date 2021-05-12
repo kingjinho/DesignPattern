@@ -1,0 +1,1 @@
+Observer Pattern that is mainly used in Android App Development 
