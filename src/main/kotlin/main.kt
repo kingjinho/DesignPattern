@@ -1,11 +1,9 @@
-import observerPattern._4WeatherData
-import observerPattern._5CurrentConditionsDisplay
-import observerPattern._6HeatIndexDisplay
+import observerPattern.*
 
 fun main(args: Array<String>) {
-    val weatherData = _4WeatherData()
-    var currentDisplay = _5CurrentConditionsDisplay(weatherData)
-    var heatIndexDisplay = _6HeatIndexDisplay(weatherData)
+    val weatherData = WeatherDataJava()
+    var currentDisplay = CurrentConditionsDisplayJava(weatherData)
+    var heatIndexDisplay = ForecastDisplayJava(weatherData)
 
     weatherData.setMeasurements(80f, 65f, 30.4f )
     weatherData.setMeasurements(82f, 70f, 29.2f )
