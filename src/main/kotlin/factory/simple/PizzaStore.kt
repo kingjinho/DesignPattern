@@ -1,4 +1,4 @@
-package factory
+package factory.simple
 
 class PizzaStore(private val factory: SimplePizzaFactory) {
 

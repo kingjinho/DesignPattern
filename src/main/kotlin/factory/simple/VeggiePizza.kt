@@ -1,7 +1,6 @@
-package factory
+package factory.simple
 
-class PepperoniPizza : Pizza {
-
+class VeggiePizza : Pizza {
     override fun prepare() {
         println("Preparing ${this.javaClass.canonicalName}")
     }

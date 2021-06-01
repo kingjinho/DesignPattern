@@ -1,4 +1,4 @@
-package factory
+package factory.simple
 
 class ClamPizza : Pizza {
     override fun prepare() {
