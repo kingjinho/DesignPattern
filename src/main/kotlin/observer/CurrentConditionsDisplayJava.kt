@@ -1,8 +1,8 @@
-package observerPattern
+package observer
 
 import java.util.*
 
-class _8CurrentConditionsDisplay(private val observable: Observable) : Observer, _3DisplayElement {
+class CurrentConditionsDisplayJava(private val observable: Observable) : Observer, DisplayElement {
 
     private var temperature = 0f
     private var humidity = 0f
@@ -12,7 +12,7 @@ class _8CurrentConditionsDisplay(private val observable: Observable) : Observer,
     }
 
     override fun update(o: Observable?, arg: Any?) {
-        if(o is _7WeatherDataJava) {
+        if(o is WeatherDataJava) {
             o.let {
                 this.temperature = it.getTemperature()
                 this.humidity = it.getHumidity()

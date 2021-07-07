@@ -1,6 +1,6 @@
-package observerPattern
+package observer
 
-class _6HeatIndexDisplay(weatherData: _4WeatherData) : _2Observer, _3DisplayElement {
+class HeatIndexDisplay(weatherData: WeatherData) : Observer, DisplayElement {
     private var temp = 0f
     private var humidity = 0f
     private var pressure = 0f

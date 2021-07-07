@@ -1,4 +1,4 @@
-package adapterPattern
+package adapter
 
 import java.lang.UnsupportedOperationException
 import java.util.*

@@ -1,4 +1,4 @@
-package adapterPattern
+package adapter
 
 class MallardDuck : Duck {
 

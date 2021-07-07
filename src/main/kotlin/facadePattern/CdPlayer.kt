@@ -1,4 +1,0 @@
-package facadePattern
-
-class CdPlayer {
-}

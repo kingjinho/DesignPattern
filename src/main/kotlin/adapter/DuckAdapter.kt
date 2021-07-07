@@ -1,4 +1,4 @@
-package adapterPattern
+package adapter
 
 class DuckAdapter(private val duck: Duck) : Turkey {
     override fun gobble() {

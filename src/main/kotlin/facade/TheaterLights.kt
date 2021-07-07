@@ -1,4 +1,4 @@
-package facadePattern
+package facade
 
 class TheaterLights {
     fun dim(brightness: Int) {

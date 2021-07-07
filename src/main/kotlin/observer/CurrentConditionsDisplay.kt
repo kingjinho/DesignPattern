@@ -1,6 +1,6 @@
-package observerPattern
+package observer
 
-class _5CurrentConditionsDisplay(weatherData: _1Subject) : _3DisplayElement, _2Observer {
+class CurrentConditionsDisplay(weatherData: Subject) : DisplayElement, Observer {
 
     private var temperature = 0f
     private var humidity = 0f

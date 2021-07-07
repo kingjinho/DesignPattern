@@ -1,8 +1,9 @@
-package observerPattern
+package observer
 
 import java.util.*
+import java.util.Observer
 
-class _9ForecastDisplay(private val observable: _7WeatherDataJava) : Observer, _3DisplayElement {
+class ForecastDisplayJava(private val observable: WeatherDataJava) : Observer, DisplayElement {
 
     private var currentPressure = 29.92f
     private var lastPressure = 0f
@@ -13,7 +14,7 @@ class _9ForecastDisplay(private val observable: _7WeatherDataJava) : Observer, _
     }
 
     override fun update(o: Observable?, arg: Any?) {
-        if (o is _7WeatherDataJava) {
+        if (o is WeatherDataJava) {
             o.let {
                 this.lastPressure = currentPressure
                 this.currentPressure = it.getPressure()

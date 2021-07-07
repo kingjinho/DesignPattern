@@ -1,4 +1,4 @@
-package facadePattern
+package facade
 
 class Screen {
     fun down() {

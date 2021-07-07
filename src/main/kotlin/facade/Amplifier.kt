@@ -1,4 +1,4 @@
-package facadePattern
+package facade
 
 class Amplifier {
     private lateinit var dvd: DvdPlayer

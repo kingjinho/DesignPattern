@@ -1,6 +1,6 @@
-package observerPattern
+package observer
 
-interface _2Observer {
+interface Observer {
     /**
      * temp, humidity, pressure: values from Subject
      * all observers must implement this inferface

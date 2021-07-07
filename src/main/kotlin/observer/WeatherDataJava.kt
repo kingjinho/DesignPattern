@@ -1,8 +1,8 @@
-package observerPattern
+package observer
 
 import java.util.*
 
-class _7WeatherDataJava : Observable() {
+class WeatherDataJava : Observable() {
 
     private var temperature = 0f
     private var humidity = 0f
