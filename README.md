@@ -5,10 +5,24 @@
 ## Abstract
 
 The first design pattern that I encountered was Adapter Pattern which frequently used in developing android
-applications. When I first saw it, it was not only hard to read, but also it made me think "Why does this have to be
-done this way?"
+applications. When I first saw it, it was not only hard to read and understand, 
+but also it made me think "Why does this have to be done this way?"
 
-For example, let's talk about `creating an object` as an example to see what we can observe.
+Before we get into what is design pattern, 
+let's talk about a real world case which is most likely to occur in your life.
+
+
+## Beginning of Story
+Suppose your project was to write an application that is shipped into a machine that manufactures various types of
+smartphones.
+
+Based on specifications and client's needs, you write an application with no errors, What a genius!
+
+Your job in this project was to write some code, which is triggered by button press. When a worker presses a button,
+It will assemble parts, test and dispense smartphone.
+
+`the code below` represents button in machine that manufactures
+smartphones based on types that they want, and `was your initial and final version`.
 
 ```kotlin
 class FactoryAtTexasAustin {
@@ -37,16 +51,19 @@ class FactoryAtTexasAustin {
 }
 ```
 
-Suppose `the code above` represents button in machine that manufactures
-smartphones based on types that they want, and `was your initial version`
-
 What do you think about this
 code? `Nothing wrong! because the way we create object is done by using object's constructor.`
+ 
 
-A year later, the machine starts adding more types of smartphones, and you as a software developer needs to reflect
-changes.
+## Twist 1 - Change
+So far so good! because client haven't filed any maintenance issues, and your part has been working seamlessly.
 
-After changes, your code will look something like this:
+However, a year after finishing your project,
+the machine starts adding more types of smartphones, client wants to add more functionality of their program.
+
+You as a software developer needs to reflect changes.
+
+After changes, your code looks something like this:
 
 ```kotlin
 class FactoryAtTexasAustin {
@@ -80,8 +97,13 @@ class FactoryAtTexasAustin {
     }
 }
 ```
+Still, it works fine and no errors are filed.
 
-As years goes by, you keep maintaining code as you have done in the previous, and your code will end up like this:
+## Twist 2 - Change on change
+
+As years goes by, new types of phones are added as client business prospers,
+
+And you keep maintaining code as you have done in the previous, and your code ends up like this:
 
 ```kotlin
 class FactoryAtTexasAustin {
@@ -122,8 +144,10 @@ class FactoryAtTexasAustin {
 }
 ```
 
-Still, there seem to be nothing wrong with the code.
+Still, there seem to be nothing wrong with the code even though your code starts looking somewhat not right. 
 
+
+## Twist 3 - Change on change on change
 However, Both Samsung and Apple announced that the way assemble and test for both IPhone and GalaxyS is going to be different from now on.
 
 What would you do?
@@ -150,8 +174,11 @@ class FactoryAtTexasAustin {
     }
 }
 ```
+Ok, it works fine with no errors even though it gets messier as you reflect changes... 
 
-Really the last thing, `if assembling and testing procedures are more segmented`,
+
+## Final Twist
+Really the last thing, `What if assembling and testing procedures are more segmented?`
 
 what would you do?  Maybe, like this?
 ```kotlin
@@ -189,8 +216,14 @@ class FactoryAtTexasAustin {
     }
 }
 ```
+**Is this is the best way you would catch up with application's changes overtime?**
+
 
 ## Thoughts on the case
+What do you think about the case above?
+
+It may seem exaggerated, or too extreme, but I am sure you have encountered similar situation at least once.
+
 Do feel somewhat overwhelming through example?
 
 Do you think that method `manufactureSmartPhone()` has a lot going on?
