@@ -189,7 +189,6 @@ class FactoryAtTexasAustin {
     }
 }
 ```
----
 
 ## Thoughts on the case
 Do feel somewhat overwhelming through example?
@@ -238,7 +237,6 @@ So far, We've noticed a few things
 4. Things from 1-3 are **DISCOVERED OVERTIME**
 5. This is where design pattern comes in
 
----
 
 ## Conclusion: What is Design Pattern?
 **Design pattern is a rule of thumb, or formalized best practices of dealing with commonly occurring problems within software design.**
@@ -249,7 +247,6 @@ Commonly occurring problems can be
 3. Maintenance issues
 
 
----
 
 ## Content
 
