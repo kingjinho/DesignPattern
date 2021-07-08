@@ -19,7 +19,7 @@ smartphones.
 Based on specifications and client's needs, you write an application with no errors, What a genius!
 
 Your job in this project was to write some code, which is triggered by button press. When a worker presses a button,
-It will assemble parts, test and dispense smartphone.
+Machine will assemble parts, test and dispense smartphone.
 
 `the code below` represents button in machine that manufactures
 smartphones based on types that they want, and `was your initial and final version`.
@@ -52,18 +52,18 @@ class FactoryAtTexasAustin {
 ```
 
 What do you think about this
-code? `Nothing wrong! because the way we create object is done by using object's constructor.`
+code? `Seems like there nothing wrong in this case. Let's see...`
  
 
 ## Twist 1 - Change
-So far so good! because client haven't filed any maintenance issues, and your part has been working seamlessly.
+So far so good! because client haven't filed any issues, and your part has been working seamlessly.
 
-However, a year after finishing your project,
-the machine starts adding more types of smartphones, client wants to add more functionality of their program.
+However, a year after,
+the factory starts adding more types of smartphones, client wants to add reflect it.
 
-You as a software developer needs to reflect changes.
+You as a software developer needs to keep up with changes.
 
-After changes, your code looks something like this:
+After some modification, your code looks something like this:
 
 ```kotlin
 class FactoryAtTexasAustin {
@@ -216,7 +216,7 @@ class FactoryAtTexasAustin {
     }
 }
 ```
-**Is this is the best way you would catch up with application's changes overtime?**
+**Do you think this is the best way you would keep up with changes overtime?**
 
 
 ## Thoughts on the case
@@ -234,32 +234,23 @@ Yes, It `changes` as soon as you finish up writing you application, the next pro
 
 During the `maintenance`, the following might(sure it will) happen to you.
 
-- Some changes request from client may not fit in the initial application design at all.
-
+- Changes requested from client may not fit in the initial application design at all.
     -  `Client: Can you fix this and this?`
-
     - `Me after inspection: Can't do this right now, because that does not fit into our original design`
 
 - When you reflect changes you might think,
-
     - `Ok, It is simple one, All I need to do is to change classA, classB.`
-
     - `Oh, since class B,C,D inherits classA and B, these needs to be fixed.`
-
     - `Oh, one more thing! since class E,F,G,H are variables of classA and classB, these classes are should be modified.`
-
     - `And let me see...Oh Come on!!! class A and B are also variables of class L,M,N,O,P`
 
 - When working with colleagues
-
     - `Brent: Hey, I cannot really understand the code you had written, so as Jenny.`
-
     - `Me: (in my brain) I thought I clearly write it, What is wrong with you all?`
+    - `Brent: (after 10 minutes of listening my explanation) To put it simply, Observer Pattern right?`
 
 - The more horrible part is that any changes you made in your application may result in consequences
-
     - `Boss: Hey, The changes that you made last week has serious flaws. it is supposed to manufactures IPhone11, not IPhone12!!!!!!`
-
     - `Me: ???`
 
 So far, We've noticed a few things
@@ -274,7 +265,7 @@ So far, We've noticed a few things
 ## Conclusion: What is Design Pattern?
 **Design pattern is a rule of thumb, or formalized best practices of dealing with commonly occurring problems within software design.**
 
-Commonly occurring problems can be
+Commonly occurring problems can be, or is helpful for
 1. Code re-usability
 2. Code flexibility
 3. Maintenance issues
