@@ -1,0 +1,22 @@
+package factory
+
+enum class EType {
+    IPHONE_9,
+    IPHONE_10,
+    IPHONE_11,
+    IPHONE_12,
+    IPHONE_12_PRO,
+    IPHONE_12_MAX,
+    IPHONE_SE,
+    IPHONE_XR,
+    IPHONE_XS,
+    GALAXY_S8,
+    GALAXY_S9,
+    GALAXY_S10,
+    GALAXY_S20,
+    GALAXY_S20_PLUS,
+    GALAXY_S20_ULTRA,
+    GALAXY_S21,
+    GALAXY_S21_PLUS,
+    GALAXY_S21_ULTRA
+}
