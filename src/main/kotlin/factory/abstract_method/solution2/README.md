@@ -4,7 +4,7 @@ Remember when we first created our simple factory pattern(not pattern exactly, t
 
 The only thing that varies is object creation, not others.
 
-In our example, manufacturing a smartphone, We want to keep the process inside the `manufacturingSmartPhone( )` method, as well as having flexibility of object creation.
+In our example, manufacturing a smartphone, We want to keep the process resides in `manufacturingSmartPhone( )` method, as well as having flexibility of object creation.
 
 Is there a way to meet our needs?
 
@@ -13,14 +13,13 @@ Throughout previous examples (if you start reading from simple package, hopefull
 
 However, this does not ensure our process, or this does not guarantee that we make an error by mistake
 
-What if, What if we `delegate object creation to actual class?`(in our case, Atlanta factory, Austin factory) while `letting the super class of
-actual class handle process?`, which means,
+What if, What if we `delegate object creation to actual class?`(in our case, Atlanta factory, Austin factory) while `letting the super class handle process?`, which means,
 >Localizing manufacturing activity to Factory (Austin, Atlanta in our case)
 
 Let's see what that means through code
 
 
-# Solution
+## Solution
 1. Create an abstract class that has methods called `manufactureSmartPhone(type: EType)` and `create(type: EType)`
 2. `manufactureSmartPhone(type: EType)` works as we saw in previous examples
     - receive SmartPhone object from `create(type: EType)`, and proceed further
@@ -82,11 +81,75 @@ Throughout modification this is what we got so far:
 
 `Defines an interface for creating an object, let subclasses decide what to instantiate`
 1. **Encapsulate object creation by letting subclasses decide**
-2. While Factory class produces abstract class(Smartphone), its implementation produces implementation of abstract class(IPhone, Galaxy)
+2. This pattern is useful when making object creation as `framework`
+      - ensure process
+      - object creation based on variations (is it an IPhone or Galaxy) and separate it based on variations         
+         - Done at actual implementation classes (Factory at Austin and Atlanta)    
+      - super class(Factory) knows its process, but it does not know the actual implementation
+         - subclass decided what to create (`Decoupled`)
+         - `method at actual implementation now works as a factory`
+3. Let subclass `decide`?
+   - Not because the pattern allows subclasses to decide at runtime, but
+   - because the creator(Factory) is written without knowledge of actual products(SmartPhone)
+      - decided by the choice of the subclass that is used
+4. While Factory class produces abstract class(Smartphone), its implementation produces implementation of abstract class(IPhone, Galaxy)
    - SmartPhone : (Abstract) Product
    - Factory: (Abstract) Creator
    - IPhone and Galaxy : Actual Product
    - Austin and Atlanta : Actual Creator
+   - this relationship is known as `parallel class hierarchies`
    
 
+## Time to talk about dependency...
+Think about when we create object without factory pattern
+```kotlin
+fun manufactureSmartPhone(type: String): SmartPhone {
+        val phone = when (type) {
+            "IPhone10" -> IPhone10()
+            "IPhone11" -> IPhone11()
+            "IPhone12" -> IPhone12()
+            "IPhoneSE" -> IPhoneSE()
+            "IPhoneSE2" -> IPhoneSE2()
+              ...
+              "IPhone40" -> IPhone40()
+            "GalaxyS8" -> SamsungGalaxyS8()
+            "GalaxyS9" -> SamsungGalaxyS9()
+            "GalaxyS10" -> SamsungGalaxyS10()
+            "GalaxyS20" -> SamsungGalaxyS20()
+            "GalaxyS21" -> SamsungGalaxyS21()
+              ...
+            "GalaxyS45" -> SamsungGalaxyS45()
+            else -> IPhone9()
+        }
+
+        phone.assemble()
+        phone.testInternetConnection()
+        phone.testWifi()
+        phone.testVoiceCall()
+        phone.testTextMessaging()
+
+        println("All Test Passed!")
+
+        return phone
+    }
+```
+If we `instantiate an object directly`, the class that use this object `will heavily depend on concrete classes`
+This means,
+1. Any changes to object may lead us to modify our client code(adding, removing)
+2. `Every new object is added` to our client code, it eventually `creates another dependency`
+
+Thus, it is clear that `reducing dependency gives us more room of flexibility`.
+
+Yes, this is so-called `Dependency Inversion Principle` from OO design principle.
+
+> Depend upon abstractions, not on implementations 
+
+It is similar to phrase `Program to an interface not an implementation`, but `Dependency Inversion Principle` has stronger stance
+toward abstraction:
+
+> 1. High-level components should not depend on our low-level components; They should both depend on abstractions
+> 
+> 
+> 2. Abstraction should not depend on details, details should depend on abstraction
+ 
 
