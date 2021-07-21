@@ -100,7 +100,7 @@ Throughout modification this is what we got so far:
    - this relationship is known as `parallel class hierarchies`
    
 
-## Time to talk about dependency...
+# Time to talk about dependency...
 Think about when we create object without factory pattern
 ```kotlin
 fun manufactureSmartPhone(type: String): SmartPhone {
@@ -133,7 +133,7 @@ fun manufactureSmartPhone(type: String): SmartPhone {
         return phone
     }
 ```
-If we `instantiate an object directly`, the class that use this object `will heavily depend on concrete classes`
+If we `instantiate an object directly on client code`, then the client code `will depend on that object`
 This means,
 1. Any changes to object may lead us to modify our client code(adding, removing)
 2. `Every new object is added` to our client code, it eventually `creates another dependency`
@@ -144,12 +144,35 @@ Yes, this is so-called `Dependency Inversion Principle` from OO design principle
 
 > Depend upon abstractions, not on implementations 
 
-It is similar to phrase `Program to an interface not an implementation`, but `Dependency Inversion Principle` has stronger stance
+It is similar to phrase `Program to an interface not an implementation`, but `Dependency Inversion Principle` has rigid stance
 toward abstraction:
 
 > 1. High-level components should not depend on our low-level components; They should both depend on abstractions
 > 
 > 
 > 2. Abstraction should not depend on details, details should depend on abstraction
- 
+
+
+### High-level component? Low-level component?
+High-level component : Factory
+
+Low-level component : SmartPhone
+
+If we look at the code above, we notice that it is very dependent on implementations, not abstraction.
+
+To solve this issue, We used `Factory method pattern` to resolve very dependent situation.
+1. We create an `abstract high-level component`(Factory, in our case), and `this class depends on abstract low-level component(SmartPhone)`
+2. From low-level component perspective, `actual implementation also depends on low-level component`.
+3. Thus, Both high and low-level component depend on abstraction, SmartPhone
+
+### Dependency Inversion Principle, So We've covered dependency, what about Inversion????
+>Inversion : Reverse, Opposite
+> 
+> Inverse what? Your way of thinking about OO design
+
+Please take a moment to think about how your thought process went through when reading my post
+
+Here is what I had gone through when writing example code
+1. First, I need a Factory class because I will be talking about factory pattern
+2. Second, I need to come up with product that Factory can manufacture, Something Fresh, cool and familiar... Smartphone boom! :facepunch:
 
