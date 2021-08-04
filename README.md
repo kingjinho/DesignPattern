@@ -55,7 +55,7 @@ What do you think about this
 code? `Seems like there nothing wrong in this case. Let's see...`
  
 
-## Twist 1 - Change
+## Story Continues... - Change
 So far so good! because client haven't filed any issues, and your part has been working seamlessly.
 
 However, a year after,
@@ -99,7 +99,7 @@ class FactoryAtTexasAustin {
 ```
 Still, it works fine and no errors are filed.
 
-## Twist 2 - Change on change
+## Story continues... - Change on change
 
 As years goes by, new types of phones are added as client business prospers,
 
@@ -147,7 +147,7 @@ class FactoryAtTexasAustin {
 Still, there seem to be nothing wrong with the code even though your code starts looking somewhat not right. 
 
 
-## Twist 3 - Change on change on change
+## The Last - Change on change on change
 However, Both Samsung and Apple announced that the way assemble and test for both IPhone and GalaxyS is going to be different from now on.
 
 What would you do?
