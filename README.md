@@ -274,8 +274,8 @@ Commonly occurring problems can be, or is helpful for
 
 ## Content
 
-1. [Strategy](./src/main/kotlin/strategy){:target="_blank"}
-2. [Observer](./src/main/kotlin/observer){:target="_blank"}
-3. Adapter
-4. Facade
-5. Factory
+1. [Strategy](./src/main/kotlin/strategy)
+2. [Observer](./src/main/kotlin/observer)
+3. [Adapter](./src/main/kotlin/adapter)
+4. [Facade](./src/main/kotlin/facade)
+5. [Factory](./src/main/kotlin/factory)
