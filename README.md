@@ -274,7 +274,7 @@ Commonly occurring problems can be, or is helpful for
 
 ## Content
 
-1. [Strategy](/src/main/kotlin/strategy)
+1. [Strategy](src/main/kotlin/strategy)
 2. Observer
 3. Adapter
 4. Facade
