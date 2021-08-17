@@ -123,8 +123,3 @@ If you feel like there is nothing wrong with this code, then I have questions fo
 1. Why do you think `manufactureSmartPhone()` knows exact type of smartphone?
 2. What if you have to remove some types of smartphones or add smartphone?
 3. What if smartphone object creation occurs on other part of your code?
-
-
-
-## Twist 1
-

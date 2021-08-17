@@ -1,2 +1,2 @@
 # Simple Factory Pattern
- One Pizza store, one pizza Style with various kinds
+The simplest way we can achieve decoupling.

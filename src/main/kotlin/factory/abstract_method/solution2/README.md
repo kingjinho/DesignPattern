@@ -1,10 +1,12 @@
 # Solution 2 - Better one
-Remember when we first created our simple factory pattern(not pattern exactly, though), We discussed one OO design principle
+Remember when we first created our simple factory pattern(not pattern exactly, though), 
+We discussed one OO design principle
 > OO Design Principle : Identify what varies
 
 The only thing that varies is object creation, not others.
 
-In our example, manufacturing a smartphone, We want to keep the process resides in `manufacturingSmartPhone( )` method, as well as having flexibility of object creation.
+In our example, manufacturing a smartphone, We want to keep the process resides in `manufacturingSmartPhone( )` method, 
+as well as having flexibility of object creation.
 
 Is there a way to meet our needs?
 
@@ -154,9 +156,9 @@ toward abstraction:
 
 
 ### High-level component? Low-level component?
-High-level component : Factory
+High-level component : Austin, Atlanta
 
-Low-level component : SmartPhone
+Low-level component : Iphone, Galaxy
 
 If we look at the code above, we notice that it is very dependent on implementations, not abstraction.
 
@@ -172,7 +174,36 @@ To solve this issue, We used `Factory method pattern` to resolve very dependent 
 
 Please take a moment to think about how your thought process went through when reading my post
 
-Here is what I had gone through when writing example code
+Here is what I had gone through when writing initial example code before using Factory Pattern
 1. First, I need a Factory class because I will be talking about factory pattern
-2. Second, I need to come up with product that Factory can manufacture, Something Fresh, cool and familiar... Smartphone boom! :facepunch:
+2. Second, I need to come up with product that Factory can manufacture, Something Fresh, cool and familiar... IPhone boom! :facepunch: :facepunch: :facepunch:
+3. While Factory manufactures smartphone, it also goes through tests : wi-fi, internet, voice call and test messaging
+4. Hold on, I want to add more types of smartphones such as Galaxy...I did not take that into account...!
 
+Takeaways
+1. `Top-to-bottom` approach
+2. Factory(Austin, Atalanta) depends on IPhone(even if it manages to add others, it will create more dependencies!!)
+3. `Cannot provide flexibility` when I need to add different types of smartphone 
+
+
+However, What if I `change, or reverse` this approach starting form smartphone?
+1. IPhone, Galaxy and others are all smartphone, and they all have same test methodology, `INTERFACE or ABSTRACT!!`
+2. Since I have a smartphone as an interface(or an abstract), Factory does not need to know actual smartphone they manufacture!
+3. Also, to have Factory not know the actual implementation of smartphone, use factory method pattern!
+4. As a result, Factory pattern depends on smartphone(interface), as well as Iphone, Galaxy and other smartphone depends on smartphone
+
+
+
+
+# Last and Final Challenge - More Control
+Iphone, Galaxy and other smartphone has some common features
+1. Take pictures,
+2. Make phone calls, 
+3. Send text messages,
+4. Has a screen
+
+However, each of them might use similar but different parts to assemble.
+Given circumstances, How should we write our code?
+
+abstract_factory :arrow_right:
+   

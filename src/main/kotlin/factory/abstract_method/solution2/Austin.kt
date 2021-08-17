@@ -5,7 +5,6 @@ import factory.EType
 class Austin : Factory() {
 
 
-
     override fun create(type: EType): SmartPhone {
         return when (type) {
             EType.IPHONE_10 ->IPhone10()
