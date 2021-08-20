@@ -4,5 +4,5 @@ abstract class Character {
 
     abstract fun move()
 
-    abstract fun talk()
+    abstract fun talk(situation: Situation)
 }
