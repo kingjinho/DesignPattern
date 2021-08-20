@@ -6,7 +6,11 @@ class Jim : Character() {
         println("normal walking")
     }
 
-    override fun talk() {
-        println("Hey, Dwight")
+    override fun talk(situation: Situation) {
+        when(situation) {
+            //todo: speak based on situations
+            //println("Hey, Dwight")
+        }
+
     }
 }
