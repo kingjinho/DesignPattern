@@ -1,6 +1,24 @@
 
 # Design Pattern
 
+## `Change, CHANGE AND CHANGE`
+
+No matter what kind of application you have ever made, or plan to make in the future,
+One thing will not change throughout the lifecycle of your application is `CHANGE`.
+
+Change had occurred in your previous projects and will eventually occur at some point.
+
+This will not appear during your initial development of software.
+
+However, This will appear when your software comes into `maintenance` process
+
+This constant, or `CHANGE`,  will likely to cause you pain.
+
+You as a developer, need to do something to get you and your teammates out of this pain
+
+
+`What and How will you do for that?` 
+
 
 ## Abstract
 
