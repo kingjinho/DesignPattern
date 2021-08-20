@@ -2,21 +2,21 @@
 
 ## Case
 
-Ok, We as a game developer team successfully.
+Ok, We as a game developer team released game successfully.
 
 Whenever I talk to one of characters, `talk( )` functions will be triggered.
 
 This fits the initial plan. Whenever characters talk, it will trigger `talk( )`.
 
-Later, Boss comes into your team and says
+Later, Boss comes into our team saying
 
 > Boss: Hey, our game is great,
 > 
 > How did you come up with putting the Office characters into our game? Incredible!! 
 > 
-> However, as you know, Our characters only speak their most famous quotes, I'm satisfied, but Gamers
+> as you know, Our characters only speak their most famous quotes. I'm very much satisfied, but 
 > 
-> want just more than that, like Michael says 'That's what she said' in awkward situation,
+> people want just more than that. like Michael says 'That's what she said' in awkward situation,
 > 
 > Jim speaks 'Bear, Beets. Battlestar Galactica' in serious situation.
 > 
