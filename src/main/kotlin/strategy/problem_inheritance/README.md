@@ -27,7 +27,7 @@ Later, Boss comes into our team saying
 
 Yes, `Change` has occurred.
 
-To cope with needs, it seems like there's `no other way except changing existing working code`
+It seems like there's `no other way except changing existing working code` to reflect needs
 
 So this is your modification.
 
@@ -89,7 +89,8 @@ class Dwight : Character() {
 ## Takeaways
 - Inherit from supertype may lead to following problems:
     1. Once there are changes in supertype, `All implementations have to be reviewed and modified`
-        - In this case, I have to modify Dwight, Jim, Michael and Toby. What if more than 4 Characters?
+        - In this case, I have to modify Dwight, Jim, Michael and Toby. What if more than 
+          4 Characters?
         - What if more situations are added, or more parameters are added?
     2. I have changed working code! It may work without bugs, but `with a high probability, 
        Changes in working code will produce unexpected errors!`
@@ -102,8 +103,6 @@ class Dwight : Character() {
 
 
 #### What about interface? Could this be a better solution?      
-
-
 
 
 
