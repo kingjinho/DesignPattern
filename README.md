@@ -1,6 +1,11 @@
 
 # Design Pattern
 
+## Reminder
+I try to come up with example that is as straightforward as possible for each design pattern. 
+
+If some of them are not solid or straightforward, please let me know.
+
 ## `Change, CHANGE AND CHANGE`
 
 No matter what kind of application you have ever made, or plan to make in the future,
@@ -15,7 +20,6 @@ However, This will appear when your software comes into `maintenance` process
 This constant, or `CHANGE`,  will likely to cause you pain.
 
 You as a developer, need to do something to get you and your teammates out of this pain
-
 
 `What and How will you do for that?` 
 
