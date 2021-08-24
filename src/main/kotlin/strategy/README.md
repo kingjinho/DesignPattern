@@ -32,3 +32,7 @@ inherit `Character`
 [Strategy Pattern](https://refactoring.guru/design-patterns/strategy)
 
 [PatternCraft - Strategy Pattern](https://www.youtube.com/watch?v=MOEsKHqLiBM)
+
+[When to use an abstract class vs. interface](https://www.infoworld.com/article/2928719/when-to-use-an-abstract-class-vs-interface-in-csharp.html)
+
+[Using an Interface vs. Abstract](https://www.baeldung.com/java-interface-vs-abstract-class)
