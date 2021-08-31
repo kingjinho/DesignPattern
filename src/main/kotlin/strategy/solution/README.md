@@ -142,4 +142,4 @@ fun main() {
 
 
 # What's next
-:point_right: [Observer](../../observer)
+:point_right: [Singleton](../../singleton)
