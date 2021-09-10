@@ -24,6 +24,7 @@
     2. Why do we have to instantiate an object as soon as applications start?
     3. What if we mistakenly set it as mutable?
     4. Lazy initialization
+    5. Cannot keep only one instance
 
 # Where it is used?
 
@@ -86,7 +87,7 @@ class ChocolateBoiler private constructor() {
    ```
 
 # Being forced to wait, We get it, but isn't synchronization expensive?
-- It is, but synchronization only matters when object variable is null
+- It is, but synchronization only matters in first time the method creates an instance 
 
 ### Other options instead of synchronization while keeping thread-safe?
 1. Do nothing if performance of `getInstance()` isn't that critical
@@ -102,9 +103,32 @@ class ChocolateBoiler private constructor() {
     ```
 
 3. Double-checked locking 
+    - Check to see if instance is created
+    - If not, then synchronize
+    
+    - Still synchronize when it is first time
+    ```kotlin
+    companion object {
+    @Volatile
+    private var INSTANCE: ChocolateBoiler? = null
+    
+            fun getInstance(): ChocolateBoiler {
+                return INSTANCE ?: synchronized(this) {
+                    val instance = ChocolateBoiler()
+                    INSTANCE = instance
+                    instance
+                }
+            }
+        }    
+    ```
+    - Volatile keyword ensures that write to this field are immediately visible to other threads
+    
 
 
-# Pros and Cons
+# Cons..?
+- Do more than one thing(violates `Single Responsibility`)
+    - Managing only one instance
+    - Its main role
 
 # Links, References
 
