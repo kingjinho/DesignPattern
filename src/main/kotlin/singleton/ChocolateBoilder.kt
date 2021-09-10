@@ -7,35 +7,30 @@ class ChocolateBoiler private constructor() {
         private set
 
     companion object {
-        private var INSTANCE: ChocolateBoiler? = null
+        /*private var INSTANCE: ChocolateBoiler? = null
         fun getInstance(): ChocolateBoiler {
-            if (INSTANCE == null) {
-                INSTANCE = ChocolateBoiler()
+            return INSTANCE ?: synchronized(this) {
+                val instance = ChocolateBoiler()
+                INSTANCE = instance
+                instance
             }
-            return INSTANCE!!
+        }*/
+        /*private val INSTANCE = ChocolateBoiler()
+        fun getInstance(): ChocolateBoiler {
+            return INSTANCE
+        }*/
+        @Volatile
+        private var INSTANCE: ChocolateBoiler? = null
+
+        fun getInstance(): ChocolateBoiler {
+            return INSTANCE ?: synchronized(this) {
+                val instance = ChocolateBoiler()
+                INSTANCE = instance
+                instance
+            }
         }
     }
 
-    fun fill() {
-        if (INSTANCE?.isEmpty!!) {
-            INSTANCE?.isEmpty = false
-            INSTANCE?.isBoiled = false
-            // fill the boiler with a milk/chocolate mixture
-        }
-    }
-
-    fun drain() {
-        if (!INSTANCE?.isEmpty!! && INSTANCE?.isBoiled!!) {
-            // drain the boiled milk and chocolate
-            INSTANCE?.isEmpty = true
-        }
-    }
-
-    fun boil() {
-        if (!INSTANCE?.isEmpty!! && !INSTANCE?.isBoiled!!) {
-            // bring the contents to a boil
-            INSTANCE?.isBoiled = true
-        }
-    }
+    //some other method
 
 }
