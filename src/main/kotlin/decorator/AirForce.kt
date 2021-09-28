@@ -1,4 +1,6 @@
 package decorator
 
-class AirForce : Shoes() {
+class AirForce : Shoe() {
+
+    override fun cost() = 30
 }
