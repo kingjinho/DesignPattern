@@ -197,6 +197,6 @@ We know from the case that inheritance does not fit very well. What about compos
 `Decorators have the same supertype and we can have more than one decorators`
 
 
-## What is Decorator Pattern/
+## What is Decorator Pattern?
 > It attaches additional responsibilities to an object dynamically
 > It provides a flexible alternative to subclassing for extending functionality
