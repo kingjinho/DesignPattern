@@ -5,12 +5,10 @@
 
 # Imaginary Case
 
-Imagine you work a web developer that works for Nike, When it was not famous. Your job is to program a website that
-shows various types of Nike shoes and price.
+Imagine you work for Nike as a web developer. Your job is to program a website that shows various types of Nike shoes
+and prices.
 
 With help of excellent UI/UX designer and co-workers, you managed to show awesome images of each shoe.
-
-During the initial project, customization was excluded.
 
 ```kotlin
 abstract class Shoe() {
@@ -30,11 +28,11 @@ class Jordan : Shoe() {
 }
 ```
 
-As Nike earns reputation with huge success of `Jordan`, More customers starts purchasing shoes. Later, Executives decide
-to add customization options. Customization options include something like
+As Nike earns reputation with huge success of `Jordan`, More customers starts purchasing shoes via online. Later,
+Executives decide to add customization options. Customization options include something like
 `Chaning color of Shoes or Swoosh, Adding words or phrases and adding fancy tags`
 
-So you took that new requirements and started modifying your code like
+So you took that new requirements and start modifying your code like
 
 ```kotlin
 abstract class Shoe {
@@ -64,25 +62,24 @@ class AirForceWithBlackSwooshAndMJTags : Shoe() {
 ```
 
 Soon you found out that this is going to be hopeless. This is going to be disaster writing all these variations of
-shoes. Moreover, you also knew that new types of shoes will be dropped.
+shoes. Moreover, you also know that new types of shoes will come periodically.
 
 `You need to find a way to turn this nightmare around`
 
 # Takeaway from the Imaginary Case
 
-- Yes, again, Changes.
+- Once again, Changes.
 
 - What if you keep writing your code like that? Any problems?
-
-1. Of course, maintenance nightmare
-2. What if some types or some colors cannot be applied?
-3. What if price of options change? find all the classes that use that option and change??
+    1. Of course, maintenance nightmare
+    2. What if some types or some colors cannot be applied?
+    3. What if price of options change? find all the classes that use that option and change??
 
 # Things that do not change
 
 No matter how many options are added, shoes are shoes.
 
-AirForce is still AirForce whether options are applied, colors are changed.
+AirForce is still AirForce whether options are applied or not.
 
 # Possible Solution1: Put Everything in superclass
 
@@ -133,13 +130,14 @@ abstract class Shoe {
 
 ```
 
-No time! executives want this to be updated asap!
+Not enough time to think! executives want this to be updated asap!
 
-Lack of confidence...Why?
+But lack of confidence...Why?
 
 # Problems
 
-This could be one solution, but lack of confidence implies some level of ambiguity, and a room for improvement as well.
+This could be one solution, but lack of confidence implies some level of ambiguity, and a room for 
+improvement as well.
 
 What are some possible downsides of the approach above?
 
@@ -151,8 +149,8 @@ It could be something like this:
 What about technically?
 
 - It is altering existing code!!!
-- HAS-A relationship is here!
-- The more options are added, the more code will be added into existing one!
+- IS-A relationship is here!
+- The more new options are added, the more code will be added into existing one!
 
 # Using decorator!!
 
@@ -183,7 +181,7 @@ To do that we have to take this into steps. How do we do that?
 4. Decorate `3` with a word `cool`
 
 `Keep in mind that from 2 to 4, we still keep decorating as shoe`
-`This also means that we have to see options as shoes, rather than looking at this as components of shoes`
+`This also means that we have to see options as shoes, rather than as components of shoes`
 
 We know from the case that inheritance does not fit very well. What about composition?
 
@@ -196,7 +194,7 @@ We know from the case that inheritance does not fit very well. What about compos
 
 `Decorators have the same supertype and we can have more than one decorators`
 
-
 ## What is Decorator Pattern?
+
 > It attaches additional responsibilities to an object dynamically
 > It provides a flexible alternative to subclassing for extending functionality
