@@ -136,8 +136,7 @@ But lack of confidence...Why?
 
 # Problems
 
-This could be one solution, but lack of confidence implies some level of ambiguity, and a room for 
-improvement as well.
+This could be one solution, but lack of confidence implies some level of ambiguity, and a room for improvement as well.
 
 What are some possible downsides of the approach above?
 
@@ -197,4 +196,61 @@ We know from the case that inheritance does not fit very well. What about compos
 ## What is Decorator Pattern?
 
 > It attaches additional responsibilities to an object dynamically
+> 
 > It provides a flexible alternative to subclassing for extending functionality
+
+```kotlin
+abstract class Shoe {
+
+    private var description = "Unknown Shoes"
+
+    fun setDescription(description: String) {
+        this.description = description
+    }
+
+    abstract fun cost(): Int
+
+    open fun getDescription() = description
+
+}
+
+class DayBreak : Shoe() {
+
+    init {
+        setDescription("DayBreak")
+    }
+
+    override fun cost() = 120
+}
+
+
+abstract class ShoeDecorator : Shoe() {
+
+    abstract override fun getDescription(): String
+
+}
+
+class ColorDecorator(private val shoe: Shoe) : ShoeDecorator() {
+
+  override fun cost() = shoe.cost() + 10
+
+  override fun getDescription() = "${shoe.getDescription()}, Color"
+}
+
+fun main() {
+
+  var force: Shoe = AirForce()
+  force = ColorDecorator(force)
+  println(force.cost())
+  println(force.getDescription())
+  
+  force = TagDecorator(force)
+  println(force.cost())
+  println(force.getDescription())
+
+  force = WordDecorator(force)
+  println(force.cost())
+  println(force.getDescription())
+}
+
+```
